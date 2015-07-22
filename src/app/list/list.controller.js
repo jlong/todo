@@ -7,7 +7,7 @@
 
   /** @ngInject */
   function ListController($scope) {
-    $scope.newTask = { complete: false }
+    $scope.newTask = { complete: false };
 
     $scope.tasks = [
       { text: 'Add a task', complete: false },
@@ -27,6 +27,15 @@
     $scope.addTask = function(task) {
       $scope.tasks.push(task);
       $scope.resetTask();
+    };
+
+    $scope.completeTask = function(task) {
+      task.complete = true;
+    };
+
+    $scope.removeTask = function(task) {
+      var index = $scope.tasks.indexOf(task);
+      if (index > -1) { $scope.tasks.splice(index, 1); }
     };
 
     $scope.resetTask();

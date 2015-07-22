@@ -4,7 +4,12 @@
 
   <ul>
     <li ng-repeat="task in tasks">
-      {{ task.text }}
+      <strike ng-if="task.complete">
+        {{ task.text }}
+      </strike>
+      <span ng-if="!task.complete">
+        {{ task.text }} <button ng-click="completeTask(task)">Complete</button> <button ng-click="removeTask(task)">Remove</button>
+      </span>
     </li>
   </ul>
 
