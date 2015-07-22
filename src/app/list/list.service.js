@@ -22,7 +22,6 @@
     function List(bareObject) {
       this.id = bareObject.id;
       this.tasks = bareObject.tasks || [];
-      console.log('tasks', this.tasks);
     }
 
     List.prototype.toBareObject = function() {
@@ -35,7 +34,6 @@
     List.prototype.save = function() {
       if (!this.id) {
         this.id = newId();
-        console.log('saving', this.toBareObject());
         lists.push(this.toBareObject());
       }
       ls.set('lists', lists);
@@ -51,7 +49,6 @@
         var list = lists[i];
         if (list.id === id) {
           found = list;
-          console.log('found', found);
           break;
         }
       }
