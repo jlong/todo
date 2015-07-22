@@ -1,0 +1,16 @@
+<div class="container">
+
+  List
+
+  <ul>
+    <li ng-repeat="task in tasks">
+      {{ task.text }}
+    </li>
+  </ul>
+
+  <div class="form-inline">
+    <input class="form-control" ng-model="newTask.text" type="text" placeholder="Enter a task" autofocus>
+    <button class="btn btn-primary" ng-click="addTask(newTask)">Add</button>
+  </div>
+
+</div>
