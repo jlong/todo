@@ -1,11 +1,9 @@
-/* global malarkey:false, toastr:false, moment:false */
+/* global moment */
 (function() {
   'use strict';
 
   angular
     .module('todo')
-    .constant('malarkey', malarkey)
-    .constant('toastr', toastr)
     .constant('moment', moment);
 
 })();
